@@ -1,5 +1,5 @@
 import pandas as pd
-
+import os
 # 파일 경로
 file_path = '..//data//hawaii-covid-data.csv'
 df_raw = pd.read_csv(file_path)
@@ -42,3 +42,6 @@ print(dff.head())
 
 # 저장할 경로 지정
 hfp = '..//hi_covid_data.csv'
+if os.path.exists(hfp):
+    os.remove(hfp)
+dff.to_csv(hfp)
