@@ -1,27 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-fm = './survey_raw.csv'
+fm = './data_age.csv'
 
 
 df_raw = pd.read_csv(fm)
 
-print('-'*50)
-print(df_raw.head())
-
-print('-'*50)
-print(df_raw['Age'])
-
-sr = df_raw['Age']
-
-print('-'*50)
-print(sr.unique())
-
-print('-'*50)
-print(sr.drop_duplicates())
-
-print(df_raw.groupby('Age'))
-
-print(type(df_raw.groupby('Age').size()))
 st = df_raw.groupby('Age').size()
 index_code = [
      'Under 18 years old',
