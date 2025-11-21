@@ -9,7 +9,7 @@ filename = '../ch11/survey_raw.csv'
 df_raw = pd.read_csv(filename)
 
 print('-'*50)
-print(df_raw)
+print(df_raw.columns)
 print('-'*50)
 colname = 'LanguageHaveWorkedWith'
 data_lang = df_raw[colname]
