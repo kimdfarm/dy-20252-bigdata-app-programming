@@ -23,7 +23,9 @@ print('-'*50)
 print(df_raw.info())
 print('-'*50)
 print(df_raw)
-df_in = df_raw[cols][df_raw['timestamp'].dt.hour < 9].groupby('station_code').sum()
+df_in = df_raw[cols][df_raw['timestamp'].dt.hour >=17]
+df_in = df_raw[cols][df_raw['timestamp'].dt.hour <= 19].groupby('station_code').sum()
+
 print(df_in)
 
 join_in = df_in.join(df_station_raw)
